@@ -3,11 +3,11 @@
 
 
 #################################################### CONFIGURATION ###
-BUILD=202112181
+BUILD=20230425
 PASS=???
 DBPASS=???
 SERVERID=???
-REPO=andreapollastri/cipi
+REPO=internero/cipi
 
 
 ####################################################   CLI TOOLS   ###
