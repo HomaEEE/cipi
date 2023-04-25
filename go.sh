@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #################################################### CONFIGURATION ###
-BUILD=202112181
+BUILD=20230425
 PASS=$(openssl rand -base64 32|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
 DBPASS=$(openssl rand -base64 24|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
 SERVERID=$(openssl rand -base64 12|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
-REPO=andreapollastri/cipi
+REPO=internero/cipi
 if [ -z "$1" ];
     BRANCH=latest
 then
