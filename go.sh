@@ -565,7 +565,7 @@ echo "${reset}"
 sleep 1s
 
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 NODE=/etc/apt/sources.list.d/nodesource.list
 sudo unlink NODE
 sudo touch $NODE
