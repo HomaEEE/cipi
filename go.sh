@@ -5,7 +5,7 @@ BUILD=20230425
 PASS=$(openssl rand -base64 32|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
 DBPASS=$(openssl rand -base64 24|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
 SERVERID=$(openssl rand -base64 12|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
-REPO=internero/cipi
+REPO=homaEEE/cipi
 if [ -z "$1" ];
     BRANCH=latest
 then
@@ -71,7 +71,7 @@ if [ "$ID" = "ubuntu" ]; then
             ;;
         *)
             echo "${bgred}${white}${bold}"
-            echo "Cipi requires Linux Ubuntu 20.04 LTS"
+            echo "Cipi requires Linux Ubuntu 22.04 LTS"
             echo "${reset}"
             exit 1;
             break
@@ -79,7 +79,7 @@ if [ "$ID" = "ubuntu" ]; then
     esac
 else
     echo "${bgred}${white}${bold}"
-    echo "Cipi requires Linux Ubuntu 20.04 LTS"
+    echo "Cipi requires Linux Ubuntu 22.04 LTS"
     echo "${reset}"
     exit 1
 fi
