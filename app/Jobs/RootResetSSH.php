@@ -37,7 +37,7 @@ class RootResetSSH implements ShouldQueue
      */
     public function handle()
     {
-        $ssh = new SSH2($this->server->ip, 22);
+        $ssh = new SSH2($this->server->ip, config('cipi.ssh_port'));
         $ssh->login('cipi', $this->oldpassword);
         $ssh->setTimeout(360);
         $ssh->exec('echo '.$this->oldpassword.' | sudo -S sudo unlink rootreset');

@@ -6,6 +6,7 @@
         'username'          => env('CIPI_USERNAME', 'administrator'),
         'password'          => env('CIPI_PASSWORD', '12345678'),
 
+        'ssh_port'          => env('SSH_PORT', '22'),
         // JWT Settings
         'jwt_secret'        => env('JWT_SECRET', env('APP_KEY')),
         'jwt_access'        => env('JWT_ACCESS', 900),
@@ -22,6 +23,5 @@
         'users_prefix'      => env('CIPI_USERS_PREFIX', 'cp'),
         'phpvers'           => ['8.2', '8.1','8.0','7.4'],
         'services'          => ['nginx','php','mysql','redis','supervisor'],
-        'default_php'       => '8.0',
-
+        'default_php'       => '8.2',
     ];

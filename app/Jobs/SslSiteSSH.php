@@ -33,7 +33,7 @@ class SslSiteSSH implements ShouldQueue
      */
     public function handle()
     {
-        $ssh = new SSH2($this->site->server->ip, 22);
+        $ssh = new SSH2($this->site->server->ip, config('cipi.ssh_port'));
         $ssh->login('cipi', $this->site->server->password);
         $ssh->setTimeout(360);
 

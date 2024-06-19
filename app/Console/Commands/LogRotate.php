@@ -43,7 +43,7 @@ class LogRotate extends Command
 
         foreach ($servers as $server) {
             foreach ($server->sites as $site) {
-                $ssh = new SSH2($server->ip, 22);
+                $ssh = new SSH2($server->ip, config('cipi.ssh_port'));
                 $ssh->login('cipi', $server->password);
                 $ssh->setTimeout(360);
                 $ssh->exec('echo '.$server->password.' | sudo -S sudo unlink /home/'.$site->username.'/log/access_bk_'.date('N').'.log');

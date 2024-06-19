@@ -7,7 +7,7 @@ DBPASS=$(openssl rand -base64 24|sha256sum|base64|head -c 32| tr '[:upper:]' '[:
 SERVERID=$(openssl rand -base64 12|sha256sum|base64|head -c 32| tr '[:upper:]' '[:lower:]')
 REPO=homaEEE/cipi
 if [ -z "$1" ];
-    BRANCH=latest
+    BRANCH=master
 then
     BRANCH=$1
 fi

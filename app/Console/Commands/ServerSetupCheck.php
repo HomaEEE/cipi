@@ -49,8 +49,8 @@ class ServerSetupCheck extends Command
                 if ($remote->status() == 200) {
                     try {
                         $server->github_key = file_get_contents('http://'.$server->ip.'/ghkey_'.$server->server_id.'.php');
-                        
-                        $ssh = new SSH2($server->ip, 22);
+
+                        $ssh = new SSH2($server->ip, config('cipi.ssh_port'));
                         $ssh->setTimeout(360);
                         $ssh->exec('echo '.$server->password.' | sudo -s sudo unlink /var/www/html/ghkey_'.$server->server_id.'.php');
                         $ssh->exec('exit');

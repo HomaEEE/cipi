@@ -35,7 +35,7 @@ class PanelDomainSslSSH implements ShouldQueue
      */
     public function handle()
     {
-        $ssh = new SSH2($this->server->ip, 22);
+        $ssh = new SSH2($this->server->ip, config('cipi.ssh_port'));
         $ssh->login('cipi', $this->server->password);
         $ssh->setTimeout(360);
         $ssh->exec('echo '.$this->server->password.' | sudo -S sudo certbot --nginx -d '.$this->site->domain.' --non-interactive --agree-tos --register-unsafely-without-email');
