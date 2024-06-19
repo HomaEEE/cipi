@@ -565,13 +565,13 @@ echo "${reset}"
 sleep 1s
 
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 NODE=/etc/apt/sources.list.d/nodesource.list
 sudo unlink NODE
 sudo touch $NODE
 sudo cat > "$NODE" <<EOF
-deb https://deb.nodesource.com/node_16.x focal main
-deb-src https://deb.nodesource.com/node_16.x focal main
+deb https://deb.nodesource.com/node_20.x nodistro main
+deb-src https://deb.nodesource.com/node_20.x nodistro main
 EOF
 sudo apt-get update
 sudo apt -y install nodejs
